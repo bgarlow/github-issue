@@ -1,0 +1,399 @@
+{
+  "vulnerabilities": [
+    {
+      "id": "SNYK-JS-JOSE-6419224",
+      "title": "Resource Exhaustion",
+      "CVSSv3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L",
+      "credit": [
+        "P3ngu1nW"
+      ],
+      "semver": {
+        "vulnerable": [
+          "<2.0.7",
+          ">=3.0.0 <4.15.5"
+        ]
+      },
+      "exploit": "Not Defined",
+      "fixedIn": [
+        "2.0.7",
+        "4.15.5"
+      ],
+      "patches": [],
+      "insights": {
+        "triageAdvice": null
+      },
+      "language": "js",
+      "severity": "medium",
+      "cvssScore": 5.3,
+      "functions": [],
+      "malicious": false,
+      "isDisputed": false,
+      "moduleName": "jose",
+      "references": [
+        {
+          "url": "https://github.com/panva/jose/commit/02a65794f7873cdaf12e81e80ad076fcdc4a9314",
+          "title": "GitHub Commit"
+        },
+        {
+          "url": "https://github.com/panva/jose/commit/1b91d88d2f8233f3477a5f4579aa5f8057b2ee8b",
+          "title": "GitHub Commit"
+        }
+      ],
+      "cvssDetails": [
+        {
+          "assigner": "Red Hat",
+          "severity": "medium",
+          "cvssV3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L",
+          "cvssV3BaseScore": 5.3,
+          "modificationTime": "2024-03-12T07:43:55.417810Z"
+        }
+      ],
+      "description": "## Overview\n[jose](https://www.npmjs.org/package/jose) is an Universal 'JSON Web Almost Everything' - JWA, JWS, JWE, JWT, JWK with no dependencies\n\nAffected versions of this package are vulnerable to Resource Exhaustion due to the JWE decryption interfaces' support for decompressing plaintext after its decryption. An attacker can cause the application to consume an unreasonable amount of CPU time or memory by sending malicious JWE payloads with compressed plaintext.\r\n\r\n**Note:**\r\n\r\nThis is only exploitable if the application uses JWE decryption from untrusted sources and runs in a Node.js environment. \r\n\r\n## Workaround \r\n\r\nThis vulnerability can be mitigated by detecting and rejecting compressed JWEs early by checking the token's protected header. If `zip` is not undefined in the protected header, the token can be rejected to prevent exploitation.\n\n## Details\n\nDenial of Service (DoS) describes a family of attacks, all aimed at making a system inaccessible to its intended and legitimate users.\n\nUnlike other vulnerabilities, DoS attacks usually do not aim at breaching security. Rather, they are focused on making websites and services unavailable to genuine users resulting in downtime.\n\nOne popular Denial of Service vulnerability is DDoS (a Distributed Denial of Service), an attack that attempts to clog network pipes to the system by generating a large volume of traffic from many machines.\n\nWhen it comes to open source libraries, DoS vulnerabilities allow attackers to trigger such a crash or crippling of the service by using a flaw either in the application code or from the use of open source libraries.\n\nTwo common types of DoS vulnerabilities:\n\n* High CPU/Memory Consumption- An attacker sending crafted requests that could cause the system to take a disproportionate amount of time to process. For example, [commons-fileupload:commons-fileupload](SNYK-JAVA-COMMONSFILEUPLOAD-30082).\n\n* Crash - An attacker sending crafted requests that could cause the system to crash. For Example,  [npm `ws` package](https://snyk.io/vuln/npm:ws:20171108)\n\n## Remediation\nUpgrade `jose` to version 2.0.7, 4.15.5 or higher.\n## References\n- [GitHub Commit](https://github.com/panva/jose/commit/02a65794f7873cdaf12e81e80ad076fcdc4a9314)\n- [GitHub Commit](https://github.com/panva/jose/commit/1b91d88d2f8233f3477a5f4579aa5f8057b2ee8b)\n",
+      "epssDetails": {
+        "percentile": "0.12615",
+        "probability": "0.00045",
+        "modelVersion": "v2023.03.01"
+      },
+      "identifiers": {
+        "CVE": [
+          "CVE-2024-28176"
+        ],
+        "CWE": [
+          "CWE-400"
+        ],
+        "GHSA": [
+          "GHSA-hhhv-q57g-882q"
+        ]
+      },
+      "packageName": "jose",
+      "proprietary": false,
+      "creationTime": "2024-03-08T08:21:24.115002Z",
+      "functions_new": [],
+      "alternativeIds": [],
+      "disclosureTime": "2024-03-07T17:40:57Z",
+      "packageManager": "npm",
+      "publicationTime": "2024-03-08T08:47:34.306470Z",
+      "modificationTime": "2024-03-13T17:12:06.191519Z",
+      "socialTrendAlert": false,
+      "severityWithCritical": "medium",
+      "from": [
+        "auth0-express-webapp-sample@*",
+        "express-openid-connect@2.17.0",
+        "jose@2.0.6"
+      ],
+      "upgradePath": [
+        false,
+        "express-openid-connect@2.17.0",
+        "jose@2.0.7"
+      ],
+      "isUpgradable": true,
+      "isPatchable": false,
+      "name": "jose",
+      "version": "2.0.6"
+    },
+    {
+      "id": "SNYK-JS-JOSE-6419224",
+      "title": "Resource Exhaustion",
+      "CVSSv3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L",
+      "credit": [
+        "P3ngu1nW"
+      ],
+      "semver": {
+        "vulnerable": [
+          "<2.0.7",
+          ">=3.0.0 <4.15.5"
+        ]
+      },
+      "exploit": "Not Defined",
+      "fixedIn": [
+        "2.0.7",
+        "4.15.5"
+      ],
+      "patches": [],
+      "insights": {
+        "triageAdvice": null
+      },
+      "language": "js",
+      "severity": "medium",
+      "cvssScore": 5.3,
+      "functions": [],
+      "malicious": false,
+      "isDisputed": false,
+      "moduleName": "jose",
+      "references": [
+        {
+          "url": "https://github.com/panva/jose/commit/02a65794f7873cdaf12e81e80ad076fcdc4a9314",
+          "title": "GitHub Commit"
+        },
+        {
+          "url": "https://github.com/panva/jose/commit/1b91d88d2f8233f3477a5f4579aa5f8057b2ee8b",
+          "title": "GitHub Commit"
+        }
+      ],
+      "cvssDetails": [
+        {
+          "assigner": "Red Hat",
+          "severity": "medium",
+          "cvssV3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L",
+          "cvssV3BaseScore": 5.3,
+          "modificationTime": "2024-03-12T07:43:55.417810Z"
+        }
+      ],
+      "description": "## Overview\n[jose](https://www.npmjs.org/package/jose) is an Universal 'JSON Web Almost Everything' - JWA, JWS, JWE, JWT, JWK with no dependencies\n\nAffected versions of this package are vulnerable to Resource Exhaustion due to the JWE decryption interfaces' support for decompressing plaintext after its decryption. An attacker can cause the application to consume an unreasonable amount of CPU time or memory by sending malicious JWE payloads with compressed plaintext.\r\n\r\n**Note:**\r\n\r\nThis is only exploitable if the application uses JWE decryption from untrusted sources and runs in a Node.js environment. \r\n\r\n## Workaround \r\n\r\nThis vulnerability can be mitigated by detecting and rejecting compressed JWEs early by checking the token's protected header. If `zip` is not undefined in the protected header, the token can be rejected to prevent exploitation.\n\n## Details\n\nDenial of Service (DoS) describes a family of attacks, all aimed at making a system inaccessible to its intended and legitimate users.\n\nUnlike other vulnerabilities, DoS attacks usually do not aim at breaching security. Rather, they are focused on making websites and services unavailable to genuine users resulting in downtime.\n\nOne popular Denial of Service vulnerability is DDoS (a Distributed Denial of Service), an attack that attempts to clog network pipes to the system by generating a large volume of traffic from many machines.\n\nWhen it comes to open source libraries, DoS vulnerabilities allow attackers to trigger such a crash or crippling of the service by using a flaw either in the application code or from the use of open source libraries.\n\nTwo common types of DoS vulnerabilities:\n\n* High CPU/Memory Consumption- An attacker sending crafted requests that could cause the system to take a disproportionate amount of time to process. For example, [commons-fileupload:commons-fileupload](SNYK-JAVA-COMMONSFILEUPLOAD-30082).\n\n* Crash - An attacker sending crafted requests that could cause the system to crash. For Example,  [npm `ws` package](https://snyk.io/vuln/npm:ws:20171108)\n\n## Remediation\nUpgrade `jose` to version 2.0.7, 4.15.5 or higher.\n## References\n- [GitHub Commit](https://github.com/panva/jose/commit/02a65794f7873cdaf12e81e80ad076fcdc4a9314)\n- [GitHub Commit](https://github.com/panva/jose/commit/1b91d88d2f8233f3477a5f4579aa5f8057b2ee8b)\n",
+      "epssDetails": {
+        "percentile": "0.12615",
+        "probability": "0.00045",
+        "modelVersion": "v2023.03.01"
+      },
+      "identifiers": {
+        "CVE": [
+          "CVE-2024-28176"
+        ],
+        "CWE": [
+          "CWE-400"
+        ],
+        "GHSA": [
+          "GHSA-hhhv-q57g-882q"
+        ]
+      },
+      "packageName": "jose",
+      "proprietary": false,
+      "creationTime": "2024-03-08T08:21:24.115002Z",
+      "functions_new": [],
+      "alternativeIds": [],
+      "disclosureTime": "2024-03-07T17:40:57Z",
+      "packageManager": "npm",
+      "publicationTime": "2024-03-08T08:47:34.306470Z",
+      "modificationTime": "2024-03-13T17:12:06.191519Z",
+      "socialTrendAlert": false,
+      "severityWithCritical": "medium",
+      "from": [
+        "auth0-express-webapp-sample@*",
+        "express-openid-connect@2.17.0",
+        "openid-client@4.9.1",
+        "jose@2.0.6"
+      ],
+      "upgradePath": [
+        false,
+        "express-openid-connect@2.17.0",
+        "openid-client@4.9.1",
+        "jose@2.0.7"
+      ],
+      "isUpgradable": true,
+      "isPatchable": false,
+      "name": "jose",
+      "version": "2.0.6"
+    }
+  ],
+  "ok": false,
+  "dependencyCount": 139,
+  "org": "bgarlow",
+  "policy": "# Snyk (https://snyk.io) policy file, patches or ignores known vulnerabilities.\nversion: v1.25.1\nignore: {}\npatch: {}\n",
+  "isPrivate": true,
+  "licensesPolicy": {
+    "severities": {},
+    "orgLicenseRules": {
+      "AGPL-1.0": {
+        "licenseType": "AGPL-1.0",
+        "severity": "high",
+        "instructions": ""
+      },
+      "AGPL-3.0": {
+        "licenseType": "AGPL-3.0",
+        "severity": "high",
+        "instructions": ""
+      },
+      "Artistic-1.0": {
+        "licenseType": "Artistic-1.0",
+        "severity": "medium",
+        "instructions": ""
+      },
+      "Artistic-2.0": {
+        "licenseType": "Artistic-2.0",
+        "severity": "medium",
+        "instructions": ""
+      },
+      "CDDL-1.0": {
+        "licenseType": "CDDL-1.0",
+        "severity": "medium",
+        "instructions": ""
+      },
+      "CPOL-1.02": {
+        "licenseType": "CPOL-1.02",
+        "severity": "high",
+        "instructions": ""
+      },
+      "EPL-1.0": {
+        "licenseType": "EPL-1.0",
+        "severity": "medium",
+        "instructions": ""
+      },
+      "GPL-2.0": {
+        "licenseType": "GPL-2.0",
+        "severity": "high",
+        "instructions": ""
+      },
+      "GPL-3.0": {
+        "licenseType": "GPL-3.0",
+        "severity": "high",
+        "instructions": ""
+      },
+      "LGPL-2.0": {
+        "licenseType": "LGPL-2.0",
+        "severity": "medium",
+        "instructions": ""
+      },
+      "LGPL-2.1": {
+        "licenseType": "LGPL-2.1",
+        "severity": "medium",
+        "instructions": ""
+      },
+      "LGPL-3.0": {
+        "licenseType": "LGPL-3.0",
+        "severity": "medium",
+        "instructions": ""
+      },
+      "MPL-1.1": {
+        "licenseType": "MPL-1.1",
+        "severity": "medium",
+        "instructions": ""
+      },
+      "MPL-2.0": {
+        "licenseType": "MPL-2.0",
+        "severity": "medium",
+        "instructions": ""
+      },
+      "MS-RL": {
+        "licenseType": "MS-RL",
+        "severity": "medium",
+        "instructions": ""
+      },
+      "SimPL-2.0": {
+        "licenseType": "SimPL-2.0",
+        "severity": "high",
+        "instructions": ""
+      }
+    }
+  },
+  "packageManager": "npm",
+  "ignoreSettings": {
+    "adminOnly": false,
+    "reasonRequired": false,
+    "disregardFilesystemIgnores": false
+  },
+  "summary": "2 vulnerable dependency paths",
+  "remediation": {
+    "unresolved": [
+      {
+        "id": "SNYK-JS-JOSE-6419224",
+        "title": "Resource Exhaustion",
+        "CVSSv3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L",
+        "credit": [
+          "P3ngu1nW"
+        ],
+        "semver": {
+          "vulnerable": [
+            "<2.0.7",
+            ">=3.0.0 <4.15.5"
+          ]
+        },
+        "exploit": "Not Defined",
+        "fixedIn": [
+          "2.0.7",
+          "4.15.5"
+        ],
+        "patches": [],
+        "insights": {
+          "triageAdvice": null
+        },
+        "language": "js",
+        "severity": "medium",
+        "cvssScore": 5.3,
+        "functions": [],
+        "malicious": false,
+        "isDisputed": false,
+        "moduleName": "jose",
+        "references": [
+          {
+            "url": "https://github.com/panva/jose/commit/02a65794f7873cdaf12e81e80ad076fcdc4a9314",
+            "title": "GitHub Commit"
+          },
+          {
+            "url": "https://github.com/panva/jose/commit/1b91d88d2f8233f3477a5f4579aa5f8057b2ee8b",
+            "title": "GitHub Commit"
+          }
+        ],
+        "cvssDetails": [
+          {
+            "assigner": "Red Hat",
+            "severity": "medium",
+            "cvssV3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L",
+            "cvssV3BaseScore": 5.3,
+            "modificationTime": "2024-03-12T07:43:55.417810Z"
+          }
+        ],
+        "description": "## Overview\n[jose](https://www.npmjs.org/package/jose) is an Universal 'JSON Web Almost Everything' - JWA, JWS, JWE, JWT, JWK with no dependencies\n\nAffected versions of this package are vulnerable to Resource Exhaustion due to the JWE decryption interfaces' support for decompressing plaintext after its decryption. An attacker can cause the application to consume an unreasonable amount of CPU time or memory by sending malicious JWE payloads with compressed plaintext.\r\n\r\n**Note:**\r\n\r\nThis is only exploitable if the application uses JWE decryption from untrusted sources and runs in a Node.js environment. \r\n\r\n## Workaround \r\n\r\nThis vulnerability can be mitigated by detecting and rejecting compressed JWEs early by checking the token's protected header. If `zip` is not undefined in the protected header, the token can be rejected to prevent exploitation.\n\n## Details\n\nDenial of Service (DoS) describes a family of attacks, all aimed at making a system inaccessible to its intended and legitimate users.\n\nUnlike other vulnerabilities, DoS attacks usually do not aim at breaching security. Rather, they are focused on making websites and services unavailable to genuine users resulting in downtime.\n\nOne popular Denial of Service vulnerability is DDoS (a Distributed Denial of Service), an attack that attempts to clog network pipes to the system by generating a large volume of traffic from many machines.\n\nWhen it comes to open source libraries, DoS vulnerabilities allow attackers to trigger such a crash or crippling of the service by using a flaw either in the application code or from the use of open source libraries.\n\nTwo common types of DoS vulnerabilities:\n\n* High CPU/Memory Consumption- An attacker sending crafted requests that could cause the system to take a disproportionate amount of time to process. For example, [commons-fileupload:commons-fileupload](SNYK-JAVA-COMMONSFILEUPLOAD-30082).\n\n* Crash - An attacker sending crafted requests that could cause the system to crash. For Example,  [npm `ws` package](https://snyk.io/vuln/npm:ws:20171108)\n\n## Remediation\nUpgrade `jose` to version 2.0.7, 4.15.5 or higher.\n## References\n- [GitHub Commit](https://github.com/panva/jose/commit/02a65794f7873cdaf12e81e80ad076fcdc4a9314)\n- [GitHub Commit](https://github.com/panva/jose/commit/1b91d88d2f8233f3477a5f4579aa5f8057b2ee8b)\n",
+        "epssDetails": {
+          "percentile": "0.12615",
+          "probability": "0.00045",
+          "modelVersion": "v2023.03.01"
+        },
+        "identifiers": {
+          "CVE": [
+            "CVE-2024-28176"
+          ],
+          "CWE": [
+            "CWE-400"
+          ],
+          "GHSA": [
+            "GHSA-hhhv-q57g-882q"
+          ]
+        },
+        "packageName": "jose",
+        "proprietary": false,
+        "creationTime": "2024-03-08T08:21:24.115002Z",
+        "functions_new": [],
+        "alternativeIds": [],
+        "disclosureTime": "2024-03-07T17:40:57Z",
+        "packageManager": "npm",
+        "publicationTime": "2024-03-08T08:47:34.306470Z",
+        "modificationTime": "2024-03-13T17:12:06.191519Z",
+        "socialTrendAlert": false,
+        "packagePopularityRank": 99,
+        "from": [
+          "auth0-express-webapp-sample@*",
+          "express-openid-connect@2.17.0",
+          "openid-client@4.9.1",
+          "jose@2.0.6"
+        ],
+        "upgradePath": [
+          false,
+          "express-openid-connect@2.17.0",
+          "openid-client@4.9.1",
+          "jose@2.0.7"
+        ],
+        "isUpgradable": true,
+        "isPatchable": false,
+        "isPinnable": false,
+        "isRuntime": false,
+        "name": "jose",
+        "version": "2.0.6",
+        "severityWithCritical": "medium"
+      }
+    ],
+    "upgrade": {},
+    "patch": {},
+    "ignore": {},
+    "pin": {}
+  },
+  "filesystemPolicy": false,
+  "filtered": {
+    "ignore": [],
+    "patch": []
+  },
+  "uniqueCount": 1,
+  "projectName": "auth0-express-webapp-sample",
+  "displayTargetFile": "package-lock.json",
+  "hasUnknownVersions": false,
+  "path": "/Users/brentgarlow/Documents/development/auth0-express/auth0-express-webapp-sample/01-Login"
+}
