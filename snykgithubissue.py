@@ -4,7 +4,7 @@ import requests
 import json
 from snyksummary import build_snyk_summary
 
-target_directory = os.environ['WORKING_DIR']
+target_directory = os.environ['TARGET_DIRECTORY']
 github_token = os.environ['GITHUB_TOKEN']
 github_repo = os.environ['GITHUB_REPOSITORY']
 github_api_url = 'https://api.github.com/repos/' + github_repo
