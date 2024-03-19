@@ -10,6 +10,13 @@ github_token = os.environ['GITHUB_TOKEN']
 github_repo = os.environ['GITHUB_REPOSITORY']
 github_api_url = 'https://api.github.com/repos/' + github_repo
 
+def generate_summary(json_file_path):
+    #TODO: address warning on open
+    with open(json_file_path) as file:
+        data = json.load(file)
+    summary = build_snyk_summary(data)
+    return summary
+
 def create_github_issue(github_token, github_api_url, summary):
     auth_header_value = "Bearer " + github_token
     headers = {
@@ -29,13 +36,6 @@ def create_github_issue(github_token, github_api_url, summary):
     
     response = requests.post(github_api_url, headers=headers, json=issueRequest)
     return response
-
-def generate_summary(json_file_path):
-    #TODO: address warning on open
-    with open(json_file_path) as file:
-        data = json.load(file)
-    summary = build_snyk_summary(data)
-    return summary
 
 def main():
     json_file_name = sys.argv[1]    
