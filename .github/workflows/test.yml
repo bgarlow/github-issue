@@ -6,7 +6,7 @@ jobs:
     steps:
     - uses: actions/checkout@master
       with:
-        repository: 'https://github.com/bgarlow/snyk-github.git'
+        repository: 'bgarlow/snyk-github'
     - name: setup python
       uses: actions/setup-python@v2
       with:
