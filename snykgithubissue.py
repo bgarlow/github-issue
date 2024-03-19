@@ -2,7 +2,6 @@ import os
 import sys
 import requests
 import json
-
 from snyksummary import build_snyk_summary
 
 working_directory = os.environ['WORKING_DIR']
