@@ -45,7 +45,8 @@ def main():
     print("in main: " + json_file_path)
     summary = generate_summary(json_file_path)
     response = create_github_issue(github_token, github_api_url, summary)
-    return response
+    print(response)
+    #return response
 
 if __name__ == "__main__":
     main()
