@@ -1,0 +1,16 @@
+name: Testing out github actions
+on: push
+jobs:
+  testing:
+    runs-on: umbutu-latest
+    steps:
+    - users: actions/checkout@master
+      with:
+        responsitory: 'https://github.com/bgarlow/snyk-github.git'
+    - name: setup python
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.8
+      run: python test.py
+      env:
+        WORKING_DIR: ./snyk-github
