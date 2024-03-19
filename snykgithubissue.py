@@ -5,7 +5,7 @@ import json
 from snyksummary import build_snyk_summary
 
 print('**current directory: ' + os.getcwd())
-print('**list directory: ' + os.listdir())
+print(os.listdir())
 
 #target_directory = os.environ['TARGET_DIRECTORY']
 github_token = os.environ['GITHUB_TOKEN']
