@@ -4,6 +4,7 @@ import requests
 import json
 from snyksummary import build_snyk_summary
 
+working_directory = os.environ['WORKING_DIRECTORY']
 target_directory = os.environ['TARGET_DIRECTORY']
 github_token = os.environ['GITHUB_TOKEN']
 github_repo = os.environ['GITHUB_REPOSITORY']
@@ -39,7 +40,7 @@ def create_github_issue(github_token, github_api_url, summary):
 def main():
     print('current directory: ' + os.getcwd())
     json_file_name = sys.argv[1]    
-    json_file_path = target_directory + '/' + json_file_name
+    json_file_path = working_directory + '/' + target_directory + '/' + json_file_name
     print("in main: " + json_file_path)
     summary = generate_summary(json_file_path)
     response = create_github_issue(github_token, github_api_url, summary)
