@@ -4,13 +4,14 @@ jobs:
   testing:
     runs-on: umbutu-latest
     steps:
-    - users: actions/checkout@master
+    - uses: actions/checkout@master
       with:
-        responsitory: 'https://github.com/bgarlow/snyk-github.git'
+        repository: 'https://github.com/bgarlow/snyk-github.git'
     - name: setup python
       uses: actions/setup-python@v2
       with:
         python-version: 3.8
+    - name: run the test python
       run: python test.py
       env:
         WORKING_DIR: ./snyk-github
